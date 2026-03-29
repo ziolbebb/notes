@@ -1,0 +1,2210 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notatka – POZYTYWIZM (klasa 4 technikum)</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap");
+
+      :root {
+        --primary: #1a3a5c;
+        --primary-light: #2c5f8a;
+        --accent: #c0392b;
+        --accent-light: #e74c3c;
+        --bg: #fdfdfd;
+        --bg-section: #f7f9fc;
+        --bg-highlight: #fff8e1;
+        --bg-table-header: #1a3a5c;
+        --text: #2c2c2c;
+        --text-light: #555;
+        --border: #d5dce6;
+        --green: #27ae60;
+        --red: #c0392b;
+        --orange: #e67e22;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Source Sans Pro", "Segoe UI", sans-serif;
+        font-size: 11pt;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      @page {
+        size: A4;
+        margin: 1.5cm 1.8cm;
+      }
+
+      .page-container {
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 20px 30px;
+      }
+
+      /* ===== HEADER ===== */
+      .main-header {
+        text-align: center;
+        padding: 30px 20px 25px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .main-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+      }
+
+      .main-header::after {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 50%;
+      }
+
+      .main-header h1 {
+        font-family: "Merriweather", Georgia, serif;
+        font-size: 26pt;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+        position: relative;
+      }
+
+      .main-header .subtitle {
+        font-size: 12pt;
+        font-weight: 300;
+        opacity: 0.9;
+        letter-spacing: 1px;
+        position: relative;
+      }
+
+      .main-header .line {
+        width: 80px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 12px auto;
+        border-radius: 2px;
+      }
+
+      /* ===== SECTIONS ===== */
+      .section {
+        margin-bottom: 28px;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        font-family: "Merriweather", Georgia, serif;
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 3px solid var(--primary);
+        padding-bottom: 8px;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        font-family: "Merriweather", serif;
+        font-size: 14pt;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .subsection-title {
+        font-family: "Merriweather", Georgia, serif;
+        font-size: 13pt;
+        font-weight: 700;
+        color: var(--primary-light);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-left: 12px;
+        border-left: 4px solid var(--primary-light);
+      }
+
+      .sub-subsection-title {
+        font-size: 11.5pt;
+        font-weight: 700;
+        color: var(--text);
+        margin-top: 15px;
+        margin-bottom: 8px;
+      }
+
+      /* ===== CONTENT BOXES ===== */
+      .info-box {
+        background: var(--bg-section);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 18px;
+        margin-bottom: 14px;
+      }
+
+      .highlight-box {
+        background: var(--bg-highlight);
+        border-left: 4px solid var(--orange);
+        border-radius: 0 8px 8px 0;
+        padding: 12px 16px;
+        margin: 12px 0;
+      }
+
+      .important-box {
+        background: #fef2f2;
+        border-left: 4px solid var(--accent);
+        border-radius: 0 8px 8px 0;
+        padding: 12px 16px;
+        margin: 12px 0;
+      }
+
+      .success-box {
+        background: #f0faf4;
+        border-left: 4px solid var(--green);
+        border-radius: 0 8px 8px 0;
+        padding: 12px 16px;
+        margin: 12px 0;
+      }
+
+      .conclusion-box {
+        background: linear-gradient(135deg, #f0f4ff 0%, #e8edf5 100%);
+        border: 2px solid var(--primary-light);
+        border-radius: 10px;
+        padding: 14px 18px;
+        margin: 14px 0;
+      }
+
+      .conclusion-box strong {
+        color: var(--primary);
+      }
+
+      /* ===== TABLES ===== */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+        font-size: 10.5pt;
+      }
+
+      table thead th {
+        background: var(--bg-table-header);
+        color: white;
+        font-weight: 600;
+        padding: 10px 12px;
+        text-align: left;
+        font-size: 10pt;
+        letter-spacing: 0.5px;
+      }
+
+      table thead th:first-child {
+        border-radius: 8px 0 0 0;
+      }
+
+      table thead th:last-child {
+        border-radius: 0 8px 0 0;
+      }
+
+      table tbody td {
+        padding: 9px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      table tbody tr:nth-child(even) {
+        background: #f8fafc;
+      }
+
+      table tbody tr:hover {
+        background: #eef3f9;
+      }
+
+      table tbody tr:last-child td:first-child {
+        border-radius: 0 0 0 8px;
+      }
+
+      table tbody tr:last-child td:last-child {
+        border-radius: 0 0 8px 0;
+      }
+
+      .pf-true {
+        color: var(--green);
+        font-weight: 700;
+      }
+
+      .pf-false {
+        color: var(--red);
+        font-weight: 700;
+      }
+
+      /* ===== LISTS ===== */
+      ul,
+      ol {
+        padding-left: 22px;
+        margin: 6px 0;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      li strong {
+        color: var(--primary);
+      }
+
+      /* ===== INLINE ===== */
+      strong {
+        font-weight: 700;
+      }
+
+      .keyword {
+        background: #e8edf5;
+        color: var(--primary);
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 10pt;
+      }
+
+      .definition {
+        font-style: italic;
+        color: var(--text-light);
+      }
+
+      em {
+        font-style: italic;
+      }
+
+      /* ===== PHILOSOPHER CARDS ===== */
+      .card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 12px 0;
+      }
+
+      .card {
+        background: var(--bg-section);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 10px 14px;
+      }
+
+      .card .card-name {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 10.5pt;
+        margin-bottom: 3px;
+      }
+
+      .card .card-desc {
+        font-size: 10pt;
+        color: var(--text-light);
+      }
+
+      /* ===== CONCEPT BLOCKS ===== */
+      .concept-block {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        margin-bottom: 14px;
+        overflow: hidden;
+      }
+
+      .concept-header {
+        background: var(--primary);
+        color: white;
+        padding: 10px 16px;
+        font-weight: 700;
+        font-size: 11.5pt;
+        letter-spacing: 0.5px;
+      }
+
+      .concept-body {
+        padding: 14px 16px;
+      }
+
+      .concept-body .label {
+        font-weight: 700;
+        color: var(--primary-light);
+        font-size: 10pt;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 8px;
+        margin-bottom: 4px;
+      }
+
+      .concept-body .label:first-child {
+        margin-top: 0;
+      }
+
+      /* ===== TWO COLUMN ===== */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 12px 0;
+      }
+
+      .col-box {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .col-box .col-header {
+        padding: 10px 14px;
+        font-weight: 700;
+        font-size: 11pt;
+        text-align: center;
+        letter-spacing: 0.5px;
+      }
+
+      .col-box .col-content {
+        padding: 12px 14px;
+      }
+
+      .col-romantic .col-header {
+        background: #7f1d1d;
+        color: white;
+      }
+
+      .col-positivist .col-header {
+        background: var(--primary);
+        color: white;
+      }
+
+      /* ===== CHARACTER PROFILE ===== */
+      .profile {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 14px 0;
+      }
+
+      .profile-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        padding: 12px 18px;
+        font-family: "Merriweather", serif;
+        font-size: 13pt;
+        font-weight: 700;
+      }
+
+      .profile-body {
+        padding: 14px 18px;
+      }
+
+      /* ===== SUMMARY TABLE ===== */
+      .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--primary);
+        white-space: nowrap;
+        width: 200px;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        text-align: center;
+        padding: 25px 20px;
+        margin-top: 30px;
+        background: var(--primary);
+        color: white;
+        border-radius: 12px;
+        font-size: 13pt;
+      }
+
+      .footer .emoji {
+        font-size: 20pt;
+      }
+
+      /* ===== PAGE BREAKS ===== */
+      .page-break {
+        page-break-before: always;
+      }
+
+      /* ===== PRINT ===== */
+      @media print {
+        body {
+          font-size: 10pt;
+        }
+
+        .page-container {
+          padding: 0;
+          max-width: 100%;
+        }
+
+        .main-header {
+          border-radius: 0;
+          margin-bottom: 20px;
+        }
+
+        .section {
+          page-break-inside: avoid;
+        }
+
+        table {
+          page-break-inside: avoid;
+        }
+
+        .profile {
+          page-break-inside: avoid;
+        }
+
+        .concept-block {
+          page-break-inside: avoid;
+        }
+      }
+
+      /* Small separator */
+      .sep {
+        height: 1px;
+        background: var(--border);
+        margin: 20px 0;
+      }
+
+      /* Timeline items */
+      .timeline-item {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 8px;
+        align-items: flex-start;
+      }
+
+      .timeline-dot {
+        width: 10px;
+        height: 10px;
+        background: var(--primary);
+        border-radius: 50%;
+        margin-top: 6px;
+        flex-shrink: 0;
+      }
+
+      .timeline-label {
+        font-weight: 700;
+        color: var(--primary);
+        min-width: 110px;
+      }
+
+      /* Arrow for transformation */
+      .transform-arrow {
+        text-align: center;
+        font-size: 24pt;
+        color: var(--primary);
+        margin: 10px 0;
+      }
+
+      .tag {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 9pt;
+        font-weight: 600;
+        margin-right: 4px;
+        letter-spacing: 0.3px;
+      }
+
+      .tag-green {
+        background: var(--green);
+      }
+
+      .tag-red {
+        background: var(--accent);
+      }
+
+      .tag-orange {
+        background: var(--orange);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- ===== HEADER ===== -->
+      <header class="main-header">
+        <h1>POZYTYWIZM</h1>
+        <div class="line"></div>
+        <div class="subtitle">
+          Notatka do sprawdzianu &bull; Klasa 4 technikum
+        </div>
+      </header>
+
+      <!-- ===== 1. WPROWADZENIE ===== -->
+      <section class="section">
+        <h2 class="section-title">
+          <span class="section-number">1</span>
+          Wprowadzenie do epoki
+        </h2>
+
+        <h3 class="subsection-title">Ramy czasowe</h3>
+        <div class="info-box">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <span class="timeline-label">W Europie:</span> ok. 1850–1890
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <span class="timeline-label">W Polsce:</span> 1864 (upadek
+              powstania styczniowego) – ok. 1890 (początek Młodej Polski)
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Nazwa epoki</h3>
+        <div class="info-box">
+          Pochodzi od dzieła <strong>Augusta Comte'a</strong>
+          <em>„Kurs filozofii pozytywnej"</em> – postulat oparcia wiedzy na
+          faktach, doświadczeniu i nauce, odrzucenie metafizyki.
+        </div>
+
+        <h3 class="subsection-title">Główni filozofowie</h3>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-name">Auguste Comte</div>
+            <div class="card-desc">Filozofia pozytywna, kult nauki i faktu</div>
+          </div>
+          <div class="card">
+            <div class="card-name">John Stuart Mill</div>
+            <div class="card-desc">
+              Utylitaryzm (pożyteczność jako miara działań)
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-name">Herbert Spencer</div>
+            <div class="card-desc">
+              Ewolucjonizm społeczny, organicyzm
+              (społeczeństwo&nbsp;=&nbsp;organizm)
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-name">Karol Darwin</div>
+            <div class="card-desc">Teoria ewolucji, dobór naturalny</div>
+          </div>
+          <div class="card">
+            <div class="card-name">Hipolit Taine</div>
+            <div class="card-desc">
+              Determinizm (rasa, środowisko, moment dziejowy)
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Kontekst polski</h3>
+        <div class="highlight-box">
+          Po klęsce <strong>powstania styczniowego (1863–1864)</strong> –
+          rozczarowanie walką zbrojną, represje zaborców, konieczność
+          przetrwania narodu innymi metodami niż zryw niepodległościowy.
+        </div>
+
+        <h3 class="subsection-title">Prawda / Fałsz</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 80%">Stwierdzenie</th>
+              <th>P/F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Pozytywizm w Polsce rozpoczął się po upadku powstania
+                listopadowego
+              </td>
+              <td class="pf-false">
+                F <span class="definition">(styczniowego)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Auguste Comte jest twórcą filozofii pozytywnej</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>
+                Pozytywiści cenili walkę zbrojną jako metodę odzyskania
+                niepodległości
+              </td>
+              <td class="pf-false">F</td>
+            </tr>
+            <tr>
+              <td>Herbert Spencer porównywał społeczeństwo do organizmu</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Pozytywizm odrzucał metafizykę i spekulacje filozoficzne</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Epoka pozytywizmu w Polsce trwała od 1864 roku</td>
+              <td class="pf-true">P</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 2. HASŁA POZYTYWISTYCZNE ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">2</span>
+          Hasła pozytywistyczne z realizacją
+        </h2>
+
+        <div class="concept-block">
+          <div class="concept-header">a) PRACA ORGANICZNA</div>
+          <div class="concept-body">
+            <div class="label">Na czym polega</div>
+            <p>
+              Społeczeństwo jest jak organizm – każda warstwa (organ) musi
+              dobrze funkcjonować, aby całość była zdrowa. Trzeba rozwijać
+              gospodarkę, przemysł, handel, edukację systematyczną, codzienną
+              pracą.
+            </p>
+            <div class="label">Realizacja w „Lalce"</div>
+            <p>
+              Wokulski jako kupiec buduje majątek, prowadzi sklep, angażuje się
+              w handel i przedsięwzięcia gospodarcze. Również
+              <strong>Minclowie</strong>, <strong>Szlangbaumowie</strong> –
+              przedsiębiorcy budujący ekonomiczną siłę.
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-block">
+          <div class="concept-header">b) PRACA U PODSTAW</div>
+          <div class="concept-body">
+            <div class="label">Na czym polega</div>
+            <p>
+              Praca na rzecz najuboższych, najbardziej zaniedbanych warstw
+              społecznych – chłopów, biedoty miejskiej. Edukacja, walka z
+              analfabetyzmem, poprawa warunków bytowych.
+            </p>
+            <div class="label">Realizacja w „Lalce"</div>
+            <p>
+              Wokulski wspiera biednych (np. rodzinę Wysockiego, magdalenki).
+              Ochocki planuje wynalazki dla dobra ludzkości. Rzecki pomaga
+              potrzebującym.
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-block">
+          <div class="concept-header">c) EMANCYPACJA KOBIET</div>
+          <div class="concept-body">
+            <div class="label">Na czym polega</div>
+            <p>
+              Dążenie do równouprawnienia kobiet – prawo do edukacji, pracy
+              zarobkowej, niezależności finansowej i społecznej.
+            </p>
+            <div class="label">Realizacja w „Lalce"</div>
+            <ul>
+              <li>
+                <strong>Stawska</strong> – pracuje jako nauczycielka, utrzymuje
+                się sama z dzieckiem; przykład kobiety samodzielnej
+              </li>
+              <li>
+                <strong>Izabela Łęcka</strong> –
+                <span class="tag tag-red">ANTYPRZYKŁAD</span> emancypacji: nie
+                pracuje, żyje na koszt ojca i adoratorów, zależna materialnie
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="concept-block">
+          <div class="concept-header">d) ASYMILACJA ŻYDÓW</div>
+          <div class="concept-body">
+            <div class="label">Na czym polega</div>
+            <p>
+              Włączenie ludności żydowskiej w życie społeczne, kulturalne i
+              gospodarcze – zrównanie praw, wzajemne poszanowanie.
+            </p>
+            <div class="label">Realizacja</div>
+            <p>W <em>„Mendlu Gdańskim"</em> – omówione w dziale 4.</p>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="concept-block" style="margin-bottom: 0">
+            <div class="concept-header">e) UTYLITARYZM</div>
+            <div class="concept-body">
+              <p>
+                Każde działanie powinno być <strong>użyteczne</strong>,
+                przynosić korzyści społeczeństwu. Pożytek ogółu ważniejszy od
+                jednostki.
+              </p>
+              <p
+                style="
+                  margin-top: 6px;
+                  font-size: 10pt;
+                  color: var(--text-light);
+                "
+              >
+                <em>Lalka:</em> Wokulski inwestuje w spółkę handlową, Ochocki
+                prowadzi badania naukowe.
+              </p>
+            </div>
+          </div>
+          <div class="concept-block" style="margin-bottom: 0">
+            <div class="concept-header">f) SCJENTYZM (kult nauki)</div>
+            <div class="concept-body">
+              <p>
+                Wiara, że <strong>nauka</strong> i metoda naukowa rozwiążą
+                wszystkie problemy ludzkości.
+              </p>
+              <p
+                style="
+                  margin-top: 6px;
+                  font-size: 10pt;
+                  color: var(--text-light);
+                "
+              >
+                <em>Lalka:</em> Ochocki – naukowiec, wynalazca. Wokulski – łączy
+                badania naukowe z działalnością kupiecką.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 3. ROMANTYZM vs POZYTYWIZM ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">3</span>
+          Pozytywizm vs Romantyzm
+        </h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%">Kategoria</th>
+              <th style="width: 39%">ROMANTYZM</th>
+              <th style="width: 39%">POZYTYWIZM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Okres w Polsce</strong></td>
+              <td>1822–1863</td>
+              <td>1864–ok. 1890</td>
+            </tr>
+            <tr>
+              <td><strong>Wydarzenie inicjujące</strong></td>
+              <td>Wydanie <em>„Ballad i romansów"</em></td>
+              <td>Upadek powstania styczniowego</td>
+            </tr>
+            <tr>
+              <td><strong>Światopogląd</strong></td>
+              <td>Idealizm, wiara w duchy, uczucia, intuicję</td>
+              <td>Realizm, materializm, kult nauki i faktu</td>
+            </tr>
+            <tr>
+              <td><strong>Stosunek do rozumu</strong></td>
+              <td>Rozum ograniczony; serce i wiara ważniejsze</td>
+              <td>Rozum i nauka są najważniejsze</td>
+            </tr>
+            <tr>
+              <td><strong>Bohater</strong></td>
+              <td>Buntownik, indywidualista, samotnik</td>
+              <td>Człowiek pracy, kupiec, naukowiec</td>
+            </tr>
+            <tr>
+              <td><strong>Gatunek dominujący</strong></td>
+              <td>Poezja (dramat, ballada)</td>
+              <td>Proza (powieść, nowela, felieton)</td>
+            </tr>
+            <tr>
+              <td><strong>Walka o Polskę</strong></td>
+              <td>Walka zbrojna, powstania, mesjanizm</td>
+              <td>Praca organiczna, praca u podstaw</td>
+            </tr>
+            <tr>
+              <td><strong>Społeczeństwo</strong></td>
+              <td>Jednostka ważniejsza od ogółu</td>
+              <td>Społeczeństwo ważniejsze od jednostki</td>
+            </tr>
+            <tr>
+              <td><strong>Wzór</strong></td>
+              <td>Poeta-wieszcz, żołnierz</td>
+              <td>Naukowiec, lekarz, kupiec, nauczyciel</td>
+            </tr>
+            <tr>
+              <td><strong>Przeszłość</strong></td>
+              <td>Idealizacja historii</td>
+              <td>Krytyczna analiza, zwrot ku teraźniejszości</td>
+            </tr>
+            <tr>
+              <td><strong>Natura</strong></td>
+              <td>Tajemnicza, duchowa</td>
+              <td>Badana naukowo, determinizm</td>
+            </tr>
+            <tr>
+              <td><strong>Kobieta</strong></td>
+              <td>Idealizowana lub demoniczna</td>
+              <td>Istota wymagająca emancypacji</td>
+            </tr>
+            <tr>
+              <td><strong>Hasła</strong></td>
+              <td>Wolność, uczucie, bunt, mesjanizm</td>
+              <td>Nauka, praca, postęp, tolerancja</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 4. MENDEL GDAŃSKI ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">4</span>
+          „Mendel Gdański" – Maria Konopnicka
+        </h2>
+
+        <h3 class="subsection-title">Treść w skrócie</h3>
+        <div class="info-box">
+          <strong>Mendel Gdański</strong> – stary, szanowany introligator
+          żydowski, mieszkający w polskim mieście od wielu lat. Czuje się
+          Polakiem, kocha ojczyznę, wierzy, że współobywatele go szanują. Wnuk
+          <strong>Kubuś</strong> wychowuje się w polskiej kulturze. Gdy
+          nadchodzi fala <strong>pogromów antyżydowskich</strong>, Mendel nie
+          chce uciekać – wierzy, że sąsiedzi go obronią. Tłum atakuje jego dom i
+          zakład, Mendel zostaje pobity, a mały Kubuś jest ofiarą pogromu.
+        </div>
+
+        <h3 class="subsection-title">Prawda / Fałsz</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 80%">Stwierdzenie</th>
+              <th>P/F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mendel jest introligatorem (oprawiaczem książek)</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Mendel mieszka w mieście od niedawna</td>
+              <td class="pf-false">
+                F <span class="definition">(od wielu lat)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Mendel chce uciekać przed pogromem</td>
+              <td class="pf-false">
+                F <span class="definition">(odmawia ucieczki)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Kubuś to wnuk Mendla</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Sąsiedzi skutecznie bronią Mendla przed tłumem</td>
+              <td class="pf-false">F</td>
+            </tr>
+            <tr>
+              <td>Mendel czuje się związany z Polską</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Nowela jest przykładem literatury tendencyjnej</td>
+              <td class="pf-true">P</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title">Asymilacja – realizacja w lekturze</h3>
+        <div class="success-box">
+          <strong>Asymilacja</strong> = proces włączania się mniejszości w
+          kulturę i życie społeczeństwa większościowego.<br /><br />
+          Mendel jest <strong>wzorcowym przykładem asymilacji</strong>:
+          <ul style="margin-top: 6px">
+            <li>Mieszka wśród Polaków od pokoleń</li>
+            <li>Mówi po polsku, prowadzi zakład rzemieślniczy</li>
+            <li>Wychowuje wnuka Kubusia w polskiej kulturze</li>
+            <li>Czuje się Polakiem, identyfikuje się z Polską</li>
+            <li>Ma polskich przyjaciół i sąsiadów</li>
+          </ul>
+        </div>
+
+        <div class="important-box">
+          <strong>Tragedia:</strong> Mimo pełnej asymilacji, Mendel pada ofiarą
+          pogromu – społeczeństwo odrzuca go ze względu na pochodzenie.
+        </div>
+
+        <h3 class="subsection-title">Antysemityzm – realizacja w lekturze</h3>
+        <div class="info-box">
+          <strong>Antysemityzm</strong> = wrogość, nienawiść i dyskryminacja
+          wobec Żydów.
+          <ul style="margin-top: 8px">
+            <li>
+              <strong>Pogrom</strong> – tłum atakuje dzielnicę żydowską, niszczy
+              dobytek
+            </li>
+            <li>
+              <strong>Bezrozumność tłumu</strong> – kierowani nienawiścią i
+              stadnym instynktem
+            </li>
+            <li>
+              <strong>Obojętność sąsiadów</strong> – ci, którzy znali Mendla,
+              nie stają w jego obronie
+            </li>
+            <li>
+              <strong>Krzywda niewinnego dziecka</strong> (Kubusia) – symbol
+              bezsensowności antysemityzmu
+            </li>
+          </ul>
+          <p style="margin-top: 8px">
+            Konopnicka <strong>potępia antysemityzm</strong> – nowela jest
+            apelem o tolerancję.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== 5. LALKA ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">5</span>
+          „Lalka" – Bolesław Prus
+        </h2>
+
+        <h3 class="subsection-title">Treść – kluczowe informacje</h3>
+        <div class="info-box">
+          <strong>Stanisław Wokulski</strong> – kupiec, były powstaniec
+          styczniowy, naukowiec-amator, zakochuje się w arystokratce
+          <strong>Izabeli Łęckiej</strong>. Zdobywa majątek na dostawach
+          wojennych w Bułgarii, wraca do Warszawy i próbuje zdobyć serce
+          Izabeli. Powieść ukazuje
+          <strong>panoramę społeczeństwa warszawskiego</strong> – arystokrację,
+          mieszczaństwo, biedotę. Wokulski jest rozdarty między romantyczną
+          miłością a pozytywistycznym działaniem. Izabela jest próżna,
+          przywiązana do konwenansów. Wokulski odkrywa, że Izabela jest bliska
+          ze <strong>Starskim</strong>. Powieść ma
+          <strong>otwarte zakończenie</strong>.
+        </div>
+
+        <h3 class="subsection-title">Prawda / Fałsz</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 80%">Stwierdzenie</th>
+              <th>P/F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Wokulski zdobył majątek na wojnie rosyjsko-tureckiej w Bułgarii
+              </td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Narratorem pamiętnika jest Wokulski</td>
+              <td class="pf-false">
+                F <span class="definition">(Ignacy Rzecki)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Izabela Łęcka pochodzi z bogatej rodziny kupieckiej</td>
+              <td class="pf-false">
+                F <span class="definition">(arystokratycznej)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Rzecki jest wiernym przyjacielem i subiektem Wokulskiego</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Wokulski uczestniczył w powstaniu styczniowym</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Izabela odwzajemnia uczucia Wokulskiego</td>
+              <td class="pf-false">F</td>
+            </tr>
+            <tr>
+              <td>Powieść ma zamknięte, jednoznaczne zakończenie</td>
+              <td class="pf-false">
+                F <span class="definition">(otwarte)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Ochocki jest naukowcem i wynalazcą</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Starski jest rywalem Wokulskiego o serce Izabeli</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>
+                Szlangbaum to kupiec żydowski, konkurent handlowy Wokulskiego
+              </td>
+              <td class="pf-true">P</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title">Znaczenie tytułu „Lalka"</h3>
+        <div class="info-box">
+          <p style="margin-bottom: 8px">
+            Tytuł ma <strong>wiele znaczeń</strong> (wieloznaczność tytułu):
+          </p>
+          <ol>
+            <li>
+              <strong>Lalka = Izabela Łęcka</strong> – piękna, ale pusta w
+              środku. Nie ma własnych poglądów, sterowana przez otoczenie i
+              konwenanse.
+            </li>
+            <li>
+              <strong>Lalka = marionetka</strong> – bohaterowie są marionetkami
+              losu, konwenansów, namiętności.
+            </li>
+            <li>
+              <strong>Lalka z eksperymentu prof. Geista</strong> – mechaniczna
+              lalka symbolizująca naukę, ale też sztuczność i iluzję.
+            </li>
+            <li>
+              <strong>Lalka = społeczeństwo</strong> – sztuczne, pozorujące
+              życie, udające coś, czym nie jest.
+            </li>
+          </ol>
+          <p style="margin-top: 8px; font-size: 10pt; color: var(--text-light)">
+            Pierwotny tytuł: <em>„Trzy pokolenia"</em> (romantyczne – Rzecki,
+            pozytywistyczne – Wokulski, nowe – Ochocki).
+          </p>
+        </div>
+
+        <h3 class="subsection-title">Motyw teatrum mundi</h3>
+        <div class="info-box">
+          <p>
+            <strong>Teatrum mundi</strong> = topos literacki: świat jest sceną,
+            ludzie są aktorami grającymi role.
+          </p>
+          <ul style="margin-top: 8px">
+            <li>
+              <strong>Salon arystokratyczny</strong> = scena pozorów –
+              arystokraci udają zamożnych, choć wielu jest zadłużonych (np.
+              Łęcki)
+            </li>
+            <li>
+              <strong>Izabela gra rolę</strong> – flirtuje ze Starskim, wobec
+              Wokulskiego gra zimną damę
+            </li>
+            <li>
+              <strong>Wokulski gra rolę kupca</strong> – choć jest romantykiem i
+              naukowcem
+            </li>
+            <li>
+              <strong>Rzecki</strong> żyje w iluzji bonapartyzmu – gra rolę
+              wiernego żołnierza idei
+            </li>
+            <li>
+              Wystawy sklepowe, bale, spacery –
+              <strong>dekoracje teatralne</strong>
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">Kompleks Pigmaliona</h3>
+        <div class="highlight-box">
+          <p>
+            <strong>Mit Pigmaliona:</strong> rzeźbiarz zakochał się we własnym
+            posągu idealnej kobiety (Galatei). Afrodyta ożywiła posąg.
+          </p>
+        </div>
+        <div class="info-box">
+          <ul>
+            <li>
+              <strong>Wokulski = Pigmalion</strong> – próbuje „stworzyć" idealną
+              kobietę z Izabeli. Idealizuje ją, projektuje na nią swoje
+              wyobrażenia.
+            </li>
+            <li>
+              <strong>Izabela = Galatea/posąg</strong> – piękna, ale pusta (jak
+              lalka). Wokulski chce ją „ożywić" swoją miłością.
+            </li>
+            <li>
+              <strong>Tragedia:</strong> W przeciwieństwie do mitu, „posąg" nie
+              ożywa – Izabela pozostaje pusta, niezdolna do prawdziwej miłości.
+              Wokulski kocha obraz, który sam stworzył.
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">Wokulski jako pozytywista i romantyk</h3>
+        <div class="two-col">
+          <div class="col-box col-positivist">
+            <div class="col-header">WOKULSKI – POZYTYWISTA</div>
+            <div class="col-content">
+              <ul>
+                <li>Przedsiębiorca, kupiec – prowadzi sklep, spółkę</li>
+                <li>Zarabia na dostawach wojennych – zmysł biznesowy</li>
+                <li>Wspiera biednych (praca u podstaw)</li>
+                <li>Prowadzi badania naukowe</li>
+                <li>Wierzy w naukę i postęp</li>
+                <li>Realizuje pracę organiczną</li>
+                <li>Praktyczny, zaradny, racjonalny</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-box col-romantic">
+            <div class="col-header">WOKULSKI – ROMANTYK</div>
+            <div class="col-content">
+              <ul>
+                <li>Uczestnik powstania styczniowego</li>
+                <li>Nieszczęśliwie zakochany – miłość irracjonalna</li>
+                <li>Gotów poświęcić wszystko dla miłości</li>
+                <li>Idealizuje ukochaną (Pigmalion)</li>
+                <li>Samotny, wyobcowany</li>
+                <li>Rozdarty wewnętrznie</li>
+                <li>Skłonność do dramatycznych gestów</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="conclusion-box">
+          <strong>Wniosek:</strong> Wokulski jest
+          <strong>bohaterem przełomu</strong> – łączy cechy romantyczne i
+          pozytywistyczne, co czyni go postacią tragiczną, bo nie może w pełni
+          zrealizować żadnej z tych ról.
+        </div>
+
+        <h3 class="subsection-title">Scjentyzm w „Lalce"</h3>
+        <div class="info-box">
+          <ul>
+            <li>
+              <strong>Julian Ochocki</strong> – główny wyraziciel scjentyzmu.
+              Marzy o odkryciach (maszyna latająca). Poświęca życie nauce.
+            </li>
+            <li>
+              <strong>Wokulski</strong> – pracuje w laboratorium, interesuje się
+              odkryciami prof. Geista. Nauka mogłaby dać mu spełnienie, ale
+              porzuca ją dla miłości.
+            </li>
+            <li>
+              <strong>Profesor Geist</strong> – naukowiec-wizjoner, wynalazca
+              metalu lżejszego od aluminium.
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">Kto jest idealistą i jakim</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%">Postać</th>
+              <th>Rodzaj idealizmu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ignacy Rzecki</strong></td>
+              <td>
+                <span class="tag">POLITYCZNY</span> Wierzy w bonapartyzm, powrót
+                Napoleonidów. Żyje przeszłością i złudzeniami.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Wokulski</strong></td>
+              <td>
+                <span class="tag tag-red">MIŁOSNY / ROMANTYCZNY</span> Wierzy w
+                wielką miłość, idealizuje Izabelę. Jednocześnie idealista
+                społeczny.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Ochocki</strong></td>
+              <td>
+                <span class="tag tag-green">NAUKOWY</span> Wierzy, że nauka
+                zmieni świat, oddaje się badaniom.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title">Mowa ezopowa</h3>
+        <div class="info-box">
+          <p>
+            <strong>Mowa ezopowa</strong> = sposób wyrażania treści zakazanych
+            przez cenzurę za pomocą alegorii, metafor, ukrytych sensów. Nazwa od
+            <strong>Ezopa</strong> – bajkopisarza.
+          </p>
+          <ul style="margin-top: 8px">
+            <li>
+              Prus nie mógł wprost pisać o zaborach, rusyfikacji (cenzura
+              rosyjska)
+            </li>
+            <li>
+              Ukryte odniesienia do sytuacji zaborowej: arystokracja trwoni
+              majątek, bieda ludu
+            </li>
+            <li>Powstanie styczniowe wspominane ostrożnie</li>
+            <li>Krytyka społeczeństwa jako krytyka narodu pod zaborami</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== 6. POTOP ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">6</span>
+          „Potop" – Henryk Sienkiewicz
+        </h2>
+
+        <h3 class="subsection-title">Ocena społeczeństwa w „Potopie"</h3>
+        <div class="two-col">
+          <div class="col-box col-romantic">
+            <div class="col-header" style="background: var(--accent)">
+              KRYTYKA
+            </div>
+            <div class="col-content">
+              <ul>
+                <li>
+                  <strong>Szlachta magnacka</strong> – zdrajcy (Radziwiłłowie)
+                </li>
+                <li>Wielu szlachciców poddaje się Szwedom bez walki</li>
+                <li><strong>Prywata ponad ojczyzną</strong></li>
+                <li>Anarchia szlachecka, warcholstwo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-box col-positivist">
+            <div class="col-header" style="background: var(--green)">
+              POCHWAŁA
+            </div>
+            <div class="col-content">
+              <ul>
+                <li>
+                  <strong>Szlachta patriotyczna</strong> – Kmicic, Wołodyjowski,
+                  Zagłoba
+                </li>
+                <li><strong>Obrona Jasnej Góry</strong> – symbol oporu</li>
+                <li><strong>Lud prosty</strong> broni ojczyzny</li>
+                <li><strong>Jan Kazimierz</strong> – jednoczy naród</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="conclusion-box">
+          <strong>Wniosek:</strong> Sienkiewicz pokazuje, że naród potrafi się
+          odrodzić nawet z najgłębszego upadku – potrzeba patriotyzmu, jedności
+          i poświęcenia.
+        </div>
+
+        <h3 class="subsection-title">Cechy powieści historycznej</h3>
+        <div class="info-box">
+          <ol>
+            <li>
+              Osadzenie fabuły w
+              <strong>konkretnej epoce historycznej</strong> (potop szwedzki
+              1655–1660)
+            </li>
+            <li>
+              Obecność <strong>postaci historycznych</strong> obok fikcyjnych
+            </li>
+            <li>
+              Wierność <strong>realiom epoki</strong> – uzbrojenie, stroje,
+              obyczaje, język
+            </li>
+            <li>
+              Odtworzenie <strong>wydarzeń historycznych</strong> – oblężenie
+              Jasnej Góry, śluby lwowskie
+            </li>
+            <li>
+              Fabuła łączy <strong>wątki historyczne z fikcyjnymi</strong>
+            </li>
+            <li><strong>Funkcja dydaktyczna/patriotyczna</strong></li>
+            <li>
+              <strong>Koloryt lokalny</strong> – kultura szlachecka: biesiady,
+              sejmiki, pojedynki
+            </li>
+          </ol>
+        </div>
+
+        <h3 class="subsection-title">„Ku pokrzepieniu serc"</h3>
+        <div class="highlight-box">
+          <strong>Cel Trylogii Sienkiewicza:</strong>
+          <ul style="margin-top: 6px">
+            <li>
+              W czasach zaborów – <strong>podnieść na duchu</strong> czytelników
+            </li>
+            <li>
+              Pokazać, że Polska
+              <strong>przetrwała wcześniejsze kryzysy</strong> i się odrodziła
+            </li>
+            <li>Dawać <strong>nadzieję</strong> na przetrwanie zaborów</li>
+            <li>Tworzyć <strong>wzorce patriotyczne</strong></li>
+            <li>
+              Budować <strong>tożsamość narodową</strong> poprzez wspólną
+              historię
+            </li>
+            <li>
+              <strong>Kreować legendę narodową</strong>, idealizując przeszłość
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">Przemiana Kmicica</h3>
+        <div class="two-col">
+          <div class="col-box col-romantic">
+            <div class="col-header" style="background: #b91c1c">
+              PRZED PRZEMIANĄ
+            </div>
+            <div class="col-content">
+              <ul>
+                <li>Awanturnik, hulaka, pijak</li>
+                <li>Warchoł szlachecki – pali zaścianki</li>
+                <li>Porywczy, gwałtowny, nieodpowiedzialny</li>
+                <li>Przechodzi na stronę Radziwiłła (zdrajcy)</li>
+                <li>Oleńka odrzuca go za zdradę ojczyzny</li>
+                <li>Działa impulsywnie</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-box col-positivist">
+            <div class="col-header" style="background: var(--green)">
+              PO PRZEMIANIE (Babinicz)
+            </div>
+            <div class="col-content">
+              <ul>
+                <li>Bohater narodowy, obrońca ojczyzny</li>
+                <li>Walczy pod pseudonimem, by odkupić winy</li>
+                <li>Odpowiedzialny, odważny, ofiarny</li>
+                <li>Gotów poświęcić życie za Polskę</li>
+                <li>Pokorny, cierpliwy</li>
+                <li>Odzyskuje dobre imię, żeni się z Oleńką</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="conclusion-box" style="text-align: center">
+          <strong>Moment przemiany:</strong> Uświadomienie zdrady Radziwiłła +
+          <strong>obrona Jasnej Góry</strong> pod pseudonimem Babinicz
+        </div>
+      </section>
+
+      <!-- ===== 7. GLORIA VICTIS ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">7</span>
+          „Gloria victis" – Eliza Orzeszkowa
+        </h2>
+
+        <h3 class="subsection-title">Treść w skrócie</h3>
+        <div class="info-box">
+          Nowela opowiada o epizodie z <strong>powstania styczniowego</strong>.
+          W lesie, na dawnym polu bitwy,
+          <strong>drzewa i wiatr</strong> opowiadają historię młodych powstańców
+          – <strong>Mariana</strong> i jego towarzyszy. Młodzi ludzie walczyli z
+          Rosjanami, ponieśli klęskę, polegli. Las stał się ich grobem i
+          pomnikiem.<br /><br />
+          <strong>„Gloria victis" = chwała zwyciężonym</strong> – ci, którzy
+          zginęli, zasługują na chwałę mimo przegranej.
+        </div>
+
+        <h3 class="subsection-title">Prawda / Fałsz</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 80%">Stwierdzenie</th>
+              <th>P/F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Akcja noweli rozgrywa się w lesie</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Nowela opowiada o powstaniu listopadowym</td>
+              <td class="pf-false">
+                F <span class="definition">(styczniowego)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Historię powstańców opowiadają drzewa i wiatr</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Tytuł oznacza „chwała zwycięzcom"</td>
+              <td class="pf-false">
+                F <span class="definition">(zwyciężonym)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Powstańcy w noweli odnoszą zwycięstwo</td>
+              <td class="pf-false">
+                F <span class="definition">(giną/przegrywają)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Nowela ma kompozycję szkatułkową</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Orzeszkowa gloryfikuje powstanie styczniowe</td>
+              <td class="pf-true">P</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title">Kompozycja szkatułkowa (ramowa)</h3>
+        <div class="info-box">
+          <p>
+            <strong>Kompozycja szkatułkowa</strong> = opowieść w opowieści, jak
+            szkatułki włożone jedna w drugą.
+          </p>
+          <ul style="margin-top: 8px">
+            <li>
+              <strong>Rama zewnętrzna:</strong> Opis lasu, natury – drzewa i
+              wiatr „mówią"
+            </li>
+            <li>
+              <strong>Szkatułka wewnętrzna:</strong> Historia Mariana i
+              towarzyszy, bitwa, śmierć
+            </li>
+            <li>
+              <strong>Powrót do ramy:</strong> Las, cisza – las jest strażnikiem
+              pamięci
+            </li>
+          </ul>
+          <p style="margin-top: 8px">
+            Buduje nastrój tajemniczości, sugeruje, że
+            <strong>natura przechowuje pamięć</strong>.
+          </p>
+        </div>
+
+        <h3 class="subsection-title">Narracja</h3>
+        <div class="info-box">
+          <ul>
+            <li>
+              <strong>Narrator trzecioosobowy</strong> – opisuje las, przyrodę
+            </li>
+            <li>
+              <strong>Narracja personifikująca</strong> – drzewa i wiatr stają
+              się narratorami
+            </li>
+            <li>
+              <strong>Narracja liryczna</strong> – język poetycki, podniosły,
+              pełen emocji i metafor
+            </li>
+            <li>
+              <strong>Polifoniczność</strong> – „głosy" natury przeplatają się z
+              relacją o wydarzeniach
+            </li>
+            <li>
+              <strong>Synkretyzm rodzajowy</strong> – łączenie epiki z liryką
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">Dialog z romantyzmem</h3>
+        <div class="two-col">
+          <div class="col-box col-romantic">
+            <div class="col-header" style="background: #92400e">
+              KONTYNUACJA ROMANTYZMU
+            </div>
+            <div class="col-content">
+              <ul>
+                <li>Kult ofiary i poświęcenia</li>
+                <li>Gloryfikacja walki zbrojnej</li>
+                <li>„Chwała zwyciężonym" – piękna przegrana</li>
+                <li>Natura jako świadek historii</li>
+                <li>Patriotyzm emocjonalny, patos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-box col-positivist">
+            <div class="col-header" style="background: var(--primary-light)">
+              MODYFIKACJA / POLEMIKA
+            </div>
+            <div class="col-content">
+              <ul>
+                <li>Nie wzywa do nowych powstań</li>
+                <li>Oddaje hołd tym, którzy już polegli</li>
+                <li>Rozliczenie z przeszłością, nie program</li>
+                <li>Realistyczny opis cierpienia i śmierci</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Dominująca funkcja językowa</h3>
+        <div class="info-box">
+          <p>
+            <strong>Funkcja ekspresywna (emotywna)</strong> – wyrażanie emocji,
+            uczuć. Tekst przesycony patosem, żalem, czcią.
+          </p>
+          <p style="margin-top: 4px">
+            Obecna też: <strong>funkcja poetycka</strong> (kunsztowny język) i
+            <strong>impresywna</strong> (ma wzruszyć czytelnika).
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== 8. NAWIĄZANIA DO HISTORII ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">8</span>
+          Jak pisarze nawiązują do wydarzeń historycznych
+        </h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Pisarz / Dzieło</th>
+              <th>Wydarzenie</th>
+              <th>Sposób nawiązania</th>
+              <th>Cel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sienkiewicz – „Potop"</strong></td>
+              <td>Potop szwedzki (1655–1660)</td>
+              <td>Powieść historyczna z fikcyjnymi bohaterami</td>
+              <td>Ku pokrzepieniu serc – nadzieja na przetrwanie</td>
+            </tr>
+            <tr>
+              <td><strong>Orzeszkowa – „Gloria victis"</strong></td>
+              <td>Powstanie styczniowe (1863)</td>
+              <td>Liryczna nowela – natura opowiada</td>
+              <td>Hołd poległym, ocalenie pamięci</td>
+            </tr>
+            <tr>
+              <td><strong>Prus – „Lalka"</strong></td>
+              <td>Powstanie styczniowe, Warszawa pod zaborem</td>
+              <td>Mowa ezopowa, aluzje, biografia Wokulskiego</td>
+              <td>Diagnoza społeczeństwa, szukanie dróg rozwoju</td>
+            </tr>
+            <tr>
+              <td><strong>Konopnicka – „Mendel Gdański"</strong></td>
+              <td>Pogromy antyżydowskie (lata 80. XIX w.)</td>
+              <td>Nowela tendencyjna, bezpośrednie ukazanie pogromu</td>
+              <td>Apel o tolerancję, krytyka antysemityzmu</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 9. ZBRODNIA I KARA ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">9</span>
+          „Zbrodnia i kara" – Fiodor Dostojewski
+        </h2>
+
+        <h3 class="subsection-title">Treść w skrócie</h3>
+        <div class="info-box">
+          <strong>Rodion Raskolnikow</strong>, biedny student w Petersburgu,
+          zabija starą lichwiarkę <strong>Alonę Iwanownę</strong> (i przypadkowo
+          jej siostrę <strong>Lizawietę</strong>) siekierą. Uzasadnia to
+          <strong>teorią o ludziach nadzwyczajnych</strong> – wybitne jednostki
+          (jak Napoleon) mają prawo przekraczać normy moralne. Po zbrodni
+          przeżywa ogromne męczarnie psychiczne. Spotyka
+          <strong>Sonię Marmieładową</strong> – biedną dziewczynę, która z
+          poświęcenia dla rodziny została prostytutką. Pod wpływem Sonii i jej
+          wiary, Raskolnikow przyznaje się do winy i zostaje zesłany na
+          <strong>Syberię</strong>. Sonia jedzie za nim. Na katordze zaczyna
+          drogę do odkupienia.
+        </div>
+
+        <h3 class="subsection-title">Prawda / Fałsz</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 78%">Stwierdzenie</th>
+              <th>P/F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Raskolnikow jest bogatym arystokratą</td>
+              <td class="pf-false">
+                F <span class="definition">(biedny student)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Raskolnikow zabija lichwiarkę nożem</td>
+              <td class="pf-false">
+                F <span class="definition">(siekierą)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Raskolnikow zabija jedną osobę</td>
+              <td class="pf-false">
+                F <span class="definition">(dwie – Alonę i Lizawietę)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Sonia Marmieładowa jest prostytutką</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Sonia została prostytutką z chciwości</td>
+              <td class="pf-false">
+                F <span class="definition">(z poświęcenia)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Raskolnikow wierzy, że wybitne jednostki mają prawo łamać prawo
+              </td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Porfiry Pietrowicz to sędzia śledczy</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Raskolnikow nigdy nie przyznaje się do zbrodni</td>
+              <td class="pf-false">
+                F <span class="definition">(przyznaje się)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Sonia jedzie za Raskolnikowem na Syberię</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Raskolnikow porównuje się do Napoleona</td>
+              <td class="pf-true">P</td>
+            </tr>
+            <tr>
+              <td>Świdrygajłow to pozytywna postać</td>
+              <td class="pf-false">
+                F <span class="definition">(mroczna, samobójstwo)</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title">Charakterystyka Rodiona Raskolnikowa</h3>
+        <div class="profile">
+          <div class="profile-header">Rodion Raskolnikow</div>
+          <div class="profile-body">
+            <ul>
+              <li>
+                <strong>Biedny student</strong> – żyje w nędzy, w ciasnej
+                izdebce w Petersburgu
+              </li>
+              <li>
+                <strong>Inteligentny, wykształcony</strong> – ale wyalienowany
+                ze społeczeństwa
+              </li>
+              <li>
+                <strong>Teoria o ludziach nadzwyczajnych:</strong> dzieli ludzi
+                na „zwyczajnych" (muszą przestrzegać prawa) i „nadzwyczajnych"
+                (mają prawo łamać normy, np. Napoleon)
+              </li>
+              <li>
+                <strong>Pycha intelektualna</strong> – uważa się za
+                nadzwyczajnego, chce to „sprawdzić"
+              </li>
+            </ul>
+            <div class="sub-subsection-title">
+              Motywacje zbrodni (złożone, wielowarstwowe):
+            </div>
+            <ul>
+              <li>
+                Chce sprawdzić swoją teorię – czy jest „Napoleonem" czy „wszą"
+              </li>
+              <li>Chce uwolnić ludzi od lichwiarki-pasożyta</li>
+              <li>Potrzebuje pieniędzy (bieda)</li>
+              <li>Chce pomóc matce i siostrze</li>
+            </ul>
+            <div class="sub-subsection-title">Po zbrodni:</div>
+            <ul>
+              <li>Załamanie psychiczne, gorączka, paranoja, izolacja</li>
+              <li>
+                Nie potrafi znieść ciężaru winy – wbrew teorii, nie jest
+                „nadczłowiekiem"
+              </li>
+              <li>Pod wpływem Sonii przyznaje się, przyjmuje karę</li>
+              <li>Na Syberii zaczyna się odradzać</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Charakterystyka Sonii Marmieładowej</h3>
+        <div class="profile">
+          <div class="profile-header">Sonia Marmieładowa</div>
+          <div class="profile-body">
+            <ul>
+              <li>
+                <strong>Córka pijaka Marmieładowa</strong> – ojciec przepija
+                pieniądze, rodzina głoduje
+              </li>
+              <li>
+                <strong>Prostytutka z poświęcenia</strong> – sprzedaje ciało, by
+                utrzymać rodzinę
+              </li>
+              <li>
+                <strong>Głęboko wierząca</strong> – wiara w Boga jest jej siłą
+              </li>
+              <li>
+                <strong>Moralna czystość</strong> mimo „niemoralnego" zajęcia –
+                paradoks Dostojewskiego
+              </li>
+              <li>
+                Nawiązanie do <strong>Marii Magdaleny</strong> – grzesznica
+                blisko Boga
+              </li>
+              <li>
+                Czyta Raskolnikowowi
+                <strong>Ewangelię o wskrzeszeniu Łazarza</strong> – symbol
+                zmartwychwstania duchowego
+              </li>
+              <li>
+                <strong>Bezwarunkowa miłość</strong> – jedzie za nim na Syberię
+              </li>
+              <li><strong>Katalizator przemiany</strong> Raskolnikowa</li>
+              <li>
+                Uosobienie idei:
+                <strong>cierpienie prowadzi do odkupienia</strong>, pokora i
+                miłość zwyciężają
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Pozostali bohaterowie</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 22%">Postać</th>
+              <th>Charakterystyka</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Porfiry Pietrowicz</strong></td>
+              <td>
+                Sędzia śledczy – inteligentny psycholog, gra z Raskolnikowem w
+                kotka i myszkę. Nakłania do przyznania się.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Świdrygajłow</strong></td>
+              <td>
+                Mroczny, amoralny arystokrata. Sobowtór Raskolnikowa –
+                przekracza normy bez wyrzutów sumienia. Popełnia samobójstwo.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Dunia</strong></td>
+              <td>
+                Siostra Raskolnikowa – silna, godna, oddana rodzinie. Wychodzi
+                za Razumichina.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Razumichin</strong></td>
+              <td>
+                Przyjaciel – dobroduszny, pracowity. Kontrast: prosty, ale
+                moralnie zdrowy.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Łużyn</strong></td>
+              <td>
+                Bogaty, podły – chce poślubić Dunię, by mieć nad nią władzę.
+                Egoista i manipulator.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Marmieładow</strong></td>
+              <td>
+                Ojciec Sonii – pijak, nieszczęśnik, wie o swojej nędzy moralnej,
+                ale nie potrafi się zmienić.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 10. ZAGADNIENIA TEORETYCZNE ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">10</span>
+          Zagadnienia gatunkowe i teoretyczne
+        </h2>
+
+        <h3 class="subsection-title">
+          a) Powieść psychologiczna – „Zbrodnia i kara"
+        </h3>
+        <div class="info-box">
+          <ol>
+            <li>
+              Główny temat to <strong>życie wewnętrzne bohatera</strong> –
+              psychika Raskolnikowa w centrum
+            </li>
+            <li>
+              <strong>Analiza motywacji</strong> – wielowarstwowe przyczyny
+              zbrodni
+            </li>
+            <li>
+              <strong>Opis stanów psychicznych</strong> – gorączka, paranoja,
+              lęk, halucynacje, sny
+            </li>
+            <li>
+              <strong>Monolog wewnętrzny</strong> – dostęp do myśli bohatera
+            </li>
+            <li>Powolny <strong>rozpad psychiczny</strong> po zbrodni</li>
+            <li>
+              <strong>Portret psychologiczny</strong> – bohaterowie złożeni,
+              wielowymiarowi
+            </li>
+            <li>Fabuła <strong>podporządkowana psychologii</strong></li>
+            <li>
+              <strong>Gra psychologiczna</strong> w relacjach
+              (Porfiry–Raskolnikow)
+            </li>
+          </ol>
+        </div>
+
+        <h3 class="subsection-title">
+          b) Powieść wielogatunkowa – „Zbrodnia i kara"
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 30%">Gatunek / konwencja</th>
+              <th>Realizacja</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Psychologiczna</strong></td>
+              <td>Analiza psychiki, motywy zbrodni, rozpad po morderstwie</td>
+            </tr>
+            <tr>
+              <td><strong>Kryminalna / sensacyjna</strong></td>
+              <td>Zbrodnia, śledztwo, gra detektyw–morderca, napięcie</td>
+            </tr>
+            <tr>
+              <td><strong>Filozoficzna</strong></td>
+              <td>Teoria nadczłowieka, pytania o granice moralności</td>
+            </tr>
+            <tr>
+              <td><strong>Społeczna</strong></td>
+              <td>Obraz biedy w Petersburgu, prostytucja, alkoholizm</td>
+            </tr>
+            <tr>
+              <td><strong>Religijna / moralna</strong></td>
+              <td>Odkupienie, Ewangelia o Łazarzu, rola cierpienia i wiary</td>
+            </tr>
+            <tr>
+              <td><strong>Obyczajowa</strong></td>
+              <td>Życie codzienne – kamienice, karczmy, ulice</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title">c) Powieść polifoniczna</h3>
+        <div class="info-box">
+          <p>
+            <strong>Powieść polifoniczna</strong> (termin Michaiła Bachtina) =
+            powieść <strong>wielogłosowa</strong>.
+          </p>
+          <ul style="margin-top: 8px">
+            <li>
+              <strong>Wielość równorzędnych głosów</strong>, punktów widzenia,
+              ideologii
+            </li>
+            <li>
+              Autor <strong>nie narzuca jednej prawdy</strong> – każda postać ma
+              swój głos
+            </li>
+            <li>
+              Bohaterowie są <strong>autonomiczni</strong> – mają własne poglądy
+            </li>
+            <li>
+              Raskolnikow – teoria; Sonia – wiara; Porfiry – mądrość;
+              Świdrygajłow – nihilizm
+            </li>
+            <li>Przeciwieństwo: powieść <strong>monologowa</strong></li>
+          </ul>
+        </div>
+
+        <h3 class="subsection-title">d) Oniryzm</h3>
+        <div class="info-box">
+          <p>
+            <strong>Oniryzm</strong> = obecność snów, halucynacji w utworze
+            literackim.
+          </p>
+          <div class="sub-subsection-title">Sny Raskolnikowa:</div>
+          <ul>
+            <li>
+              <strong>Sen o zabijanym koniu</strong> (przed zbrodnią) –
+              wrażliwość, zapowiedź zbrodni i wyrzutów
+            </li>
+            <li>
+              <strong>Sen o Afryce/oazie</strong> – pragnienie ucieczki i
+              spokoju
+            </li>
+            <li>
+              <strong>Sen gorączkowy</strong> – lichwiarka się śmieje –
+              niemożność ucieczki od winy
+            </li>
+            <li>
+              <strong>Sen o zarazie</strong> (na katordze) – apokaliptyczna
+              wizja, krytyka nihilizmu
+            </li>
+          </ul>
+          <p style="margin-top: 8px">
+            Sny: odsłaniają <strong>podświadomość</strong>, zapowiadają
+            wydarzenia, mają <strong>znaczenie symboliczne</strong>.
+          </p>
+        </div>
+
+        <h3 class="subsection-title">e) Literatura tendencyjna</h3>
+        <div class="info-box">
+          <p>
+            <strong>Literatura tendencyjna</strong> = literatura z wyraźną
+            <strong>tezą</strong> (tendencją).
+          </p>
+          <ul style="margin-top: 6px">
+            <li>
+              Fabuła podporządkowana z góry założonej tezie moralnej/społecznej
+            </li>
+            <li>
+              <strong>Podział czarno-biały</strong> na pozytywnych i negatywnych
+            </li>
+            <li><strong>Dydaktyzm</strong> – utwór ma uczyć, przekonywać</li>
+            <li>
+              Typowa dla <strong>wczesnego pozytywizmu</strong> (lata 60.–70.)
+            </li>
+          </ul>
+          <div class="highlight-box" style="margin-top: 10px">
+            <strong>Przykład:</strong> „Mendel Gdański" – teza: antysemityzm
+            jest zły.<br />
+            <strong>„Lalka" NIE jest literaturą tendencyjną</strong> – to
+            powieść dojrzałego realizmu, wieloznaczna.
+          </div>
+        </div>
+
+        <h3 class="subsection-title">f) Cechy realizmu</h3>
+        <div class="info-box">
+          <ol>
+            <li>
+              <strong>Prawdopodobieństwo</strong> – fabuła mogłaby się wydarzyć
+              naprawdę
+            </li>
+            <li>
+              <strong>Typowość postaci</strong> – bohaterowie reprezentują typy
+              społeczne
+            </li>
+            <li>
+              <strong>Panorama społeczna</strong> – wiele warstw społeczeństwa
+            </li>
+            <li><strong>Szczegółowy opis</strong> rzeczywistości</li>
+            <li>
+              <strong>Narrator wszechwiedzący</strong> – obiektywny,
+              trzecioosobowy
+            </li>
+            <li><strong>Język dostosowany do postaci</strong></li>
+            <li><strong>Motywacja psychologiczna i społeczna</strong></li>
+            <li><strong>Brak elementów fantastycznych</strong></li>
+            <li><strong>Krytyczny obraz społeczeństwa</strong></li>
+            <li><strong>Gatunki:</strong> powieść, nowela, opowiadanie</li>
+          </ol>
+        </div>
+
+        <h3 class="subsection-title">g) Cechy naturalizmu</h3>
+        <div class="info-box">
+          <p>
+            Naturalizm = <strong>radykalizacja realizmu</strong> (główny
+            teoretyk: Émile Zola):
+          </p>
+          <ol style="margin-top: 8px">
+            <li>
+              <strong>Determinizm</strong> – człowiek zdeterminowany przez geny,
+              środowisko, moment historyczny
+            </li>
+            <li>
+              <strong>Biologizm</strong> – zachowania wyjaśniane instynktami,
+              popędami
+            </li>
+            <li><strong>Pesymizm</strong> – brak wolnej woli</li>
+            <li>
+              <strong>Brzydota, drastyczność</strong> – choroby, patologie,
+              nędza bez upiększania
+            </li>
+            <li><strong>Obiektywizm naukowy</strong> – pisarz jak naukowiec</li>
+            <li>
+              <strong>Środowiska marginalne</strong> – alkoholicy, prostytutki,
+              biedacy
+            </li>
+            <li><strong>Fizjologia</strong> – opis ciała, choroby, głodu</li>
+            <li><strong>„Powieść eksperymentalna"</strong> (Zola)</li>
+          </ol>
+        </div>
+
+        <h3 class="subsection-title">h) „Epoka niepoetycka"</h3>
+        <div class="info-box">
+          <p>Pozytywizm = <strong>„epoka niepoetycka"</strong>, ponieważ:</p>
+          <ol style="margin-top: 6px">
+            <li>
+              <strong>Dominuje proza</strong> – powieść, nowela, felieton,
+              reportaż
+            </li>
+            <li>
+              Pozytywiści cenili <strong>użyteczność</strong> – proza mogła
+              edukować; poezja wydawała się „niepraktyczna"
+            </li>
+            <li><strong>Odrzucenie romantycznego poety-wieszcza</strong></li>
+            <li>Program literacki faworyzował prozę</li>
+            <li>Poeci (np. Asnyk, Konopnicka) tworzyli, ale nie dominowali</li>
+          </ol>
+          <div class="highlight-box" style="margin-top: 8px">
+            <strong>UWAGA:</strong> Nie oznacza to, że nie pisano poezji –
+            pisano, ale
+            <strong>nie była dominującym rodzajem literackim</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PODSUMOWANIE ===== -->
+      <section class="section page-break">
+        <h2 class="section-title">
+          <span class="section-number">★</span>
+          Podsumowanie – najważniejsze pojęcia
+        </h2>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th style="width: 28%">Pojęcie</th>
+              <th>Definicja</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Praca organiczna</td>
+              <td>
+                Rozwój gospodarczy, każda warstwa społeczna pracuje jak organ
+                ciała
+              </td>
+            </tr>
+            <tr>
+              <td>Praca u podstaw</td>
+              <td>Edukacja i pomoc najuboższym</td>
+            </tr>
+            <tr>
+              <td>Utylitaryzm</td>
+              <td>Pożyteczność jako miara wartości</td>
+            </tr>
+            <tr>
+              <td>Scjentyzm</td>
+              <td>Kult nauki</td>
+            </tr>
+            <tr>
+              <td>Emancypacja</td>
+              <td>Równouprawnienie kobiet</td>
+            </tr>
+            <tr>
+              <td>Asymilacja</td>
+              <td>Włączenie mniejszości w życie większości</td>
+            </tr>
+            <tr>
+              <td>Mowa ezopowa</td>
+              <td>Ukrywanie treści przed cenzurą za pomocą aluzji</td>
+            </tr>
+            <tr>
+              <td>Teatrum mundi</td>
+              <td>Świat jako teatr, ludzie jako aktorzy</td>
+            </tr>
+            <tr>
+              <td>Kompleks Pigmaliona</td>
+              <td>Tworzenie idealnego obrazu osoby, której się nie zna</td>
+            </tr>
+            <tr>
+              <td>Kompozycja szkatułkowa</td>
+              <td>Opowieść w opowieści</td>
+            </tr>
+            <tr>
+              <td>Oniryzm</td>
+              <td>Sny i halucynacje w literaturze</td>
+            </tr>
+            <tr>
+              <td>Polifonia</td>
+              <td>Wielogłosowość – wiele równorzędnych punktów widzenia</td>
+            </tr>
+            <tr>
+              <td>Literatura tendencyjna</td>
+              <td>Literatura z tezą, dydaktyczna</td>
+            </tr>
+            <tr>
+              <td>Ku pokrzepieniu serc</td>
+              <td>Cel Sienkiewicza – podnosić na duchu Polaków</td>
+            </tr>
+            <tr>
+              <td>Gloria victis</td>
+              <td>Chwała zwyciężonym</td>
+            </tr>
+            <tr>
+              <td>Determinizm</td>
+              <td>Człowiek zdeterminowany przez środowisko, geny, epokę</td>
+            </tr>
+            <tr>
+              <td>Realizm</td>
+              <td>Wierne oddanie rzeczywistości</td>
+            </tr>
+            <tr>
+              <td>Naturalizm</td>
+              <td>Skrajny realizm – determinizm, biologizm, brzydota</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== FOOTER ===== -->
+      <div class="footer">
+        <div class="emoji">📚</div>
+        <div style="margin-top: 8px; font-weight: 600; letter-spacing: 1px">
+          Powodzenia na sprawdzianie!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
